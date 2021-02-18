@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <title>(Colored) Paragraphs</title>
+    <meta charset='utf-8'>
+    <script src="https://d3js.org/d3.v6.min.js"></script>
+    <script>
+        
+        function creatorP() {
+            d3.select("#par")
+                .append("p").
+                text(d3.select("#textinput").property("value"));
+            document.getElementById('textinput').value = '';
+        }     
+
+        function redP() {
+            d3.selectAll("p").style("color", "red");
+        }
+
+        function blueP() {
+            d3.selectAll("p").style("color", "blue");
+        }
+    </script>
+</head>
+<body>
+    <h3 style="color:forestgreen">(Colored) Paragraphs</h3>
+    <div>
+        <input id='textinput' placeholder="Insert text here...">
+    </div>
+
+    <div id="par">
+        <button onclick="creatorP()" style="width: 161px"> Submit </button>
+        <br>
+        <button onclick="redP()" style="color:orangered; width: 78.5px">Red</button>
+        <button onclick="blueP()" style="color:dodgerblue; width: 78.5px">Blue</button>
+    </div>
+</body>
+</html>
